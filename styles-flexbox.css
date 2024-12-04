@@ -1,0 +1,248 @@
+/* Estilos gerais da página */
+body {
+
+
+/* Oculta o checkbox visualmente */
+.menu-toggle {
+    display: none;
+}
+
+/* Ícone do menu hambúrguer */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Estilo da lista de navegação */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    position: relative; /* Necessário para o dropdown */
+    margin: 0 15px;
+}
+
+nav ul li a {
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00ff37;
+}
+
+/* Botão de login */
+.btn-login {
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    background-color: #3cff00;
+    color: white;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+/* Estilo do dropdown */
+.dropdown-content {
+    display: none; /* Esconde o submenu inicialmente */
+    position: absolute;
+    background-color: #1b2050;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    min-width: 160px;
+    padding: 0;
+}
+
+.dropdown-content li a {
+    padding: 10px 15px;
+    display: block;
+}
+
+.dropdown-content li a:hover {
+    background-color: #ef3950;
+}
+
+/* Mostra o submenu ao passar o mouse */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    /* Ícone do menu hambúrguer visível */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Esconde a lista de navegação por padrão */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        background-color: #1b2050;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+    /* Mostra a lista de navegação quando o checkbox está marcado */
+    .menu-toggle:checked + .menu-icon + nav ul {
+        display: flex;
+    }
+
+    /* Links centralizados no layout mobile */
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajuste dos tamanhos para telas muito pequenas */
+    nav ul li a {
+        font-size: 18px;
+    }
+
+    .btn-login {
+        font-size: 16px;
+    }
+}
+
+
+    font-family: Arial, sans-serif;
+    background-color: #d1ffc8;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container da galeria usando Grid */
+.grid-gallery-container {
+    display: grid; /* Ativa o CSS Grid */
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Define o grid com colunas flexíveis */
+    gap: 10px; /* Espaçamento entre os itens */
+    padding: 20px;
+    margin: auto;
+}
+
+/* Cada item da galeria */
+.grid-gallery-item {
+    margin: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 400px; /* Define uma largura fixa para cada item */
+    transition: all .3s;
+   
+}
+
+/* Estilos para as imagens */
+
+
+.grid-gallery-container:hover .grid-gallery-item{
+    opacity: .5;
+}
+.grid-gallery-container .grid-gallery-item:hover {
+    opacity: 1
+}
+.grid-gallery-item:hover{
+    transform: translateY(-20px)
+}
+
+.grid-gallery-container {
+    display: grid;
+    gap: 10px;
+    padding: 20px;
+}
+
+
+ img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+@media (min-width: 768px) {
+  img{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 768px) and (min-width: 480px) {
+   img{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 480px) {
+     img{
+        grid-template-columns: 1fr;
+    }
+    
+}
+/* Rodapé inferior */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    border-top: 1px solid #000000;
+    font-size: 14px;
+    color: #000000;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    /* Alinha as seções verticalmente em telas menores */
+    .footer-container {
+        flex-direction: column;
+        align-items: center; /* Centraliza as seções */
+    background-color: #6dfd82;
+    }
+
+    .footer-section {
+        flex-basis: 100%; /* Cada seção ocupa toda a largura */
+        text-align: center; /* Texto centralizado */
+    }
+
+    .footer-section h4 {
+        font-size: 16px; /* Reduz tamanho da fonte */
+    }
+
+    .footer-section p,
+    .footer-section ul {
+        font-size: 14px; /* Reduz tamanho do texto */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajuste adicional para telas muito pequenas */
+    .footer-section h4 {
+        font-size: 14px;
+    }
+
+    .footer-section p,
+    .footer-section ul {
+        font-size: 12px;
+    }
+
+    .footer-bottom {
+        font-size: 12px;
+        color: #00ff37;
+    }
+}
+
+
